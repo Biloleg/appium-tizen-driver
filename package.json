@@ -1,0 +1,62 @@
+{
+  "name": "appium-tizen-tv-driver",
+  "description": "Tizen TV support for Appium",
+  "keywords": [
+    "appium",
+    "tizen",
+    "testing",
+    "automation",
+    "mobile",
+    "mobile testing"
+  ],
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=14",
+    "npm": ">=6"
+  },
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "@appium/types": "0.13.4",
+    "@headspinio/tizen-remote": "^0.6.1",
+    "appium-chromedriver": "6.1.16",
+    "asyncbox": "3.0.0",
+    "bluebird": "3.7.2",
+    "get-port": "5.1.1",
+    "got": "11.8.6",
+    "keycode": "2.2.1",
+    "lodash": "4.17.21",
+    "source-map-support": "0.5.21",
+    "teen_process": "2.3.3",
+    "type-fest": "3.13.1",
+    "yargs": "17.7.2"
+  },
+  "scripts": {
+    "test": "run-p test:unit",
+    "test:e2e": "mocha \"test/e2e/**/*.e2e.spec.js\" -t 60s",
+    "test:smoke": "node .",
+    "test:unit": "mocha \"test/unit/**/*.spec.js\" -t 5s",
+    "test:ci": "run-s test:smoke test:unit"
+  },
+  "appium": {
+    "driverName": "tizentv",
+    "automationName": "TizenTV",
+    "platformNames": [
+      "TizenTV"
+    ],
+    "mainClass": "TizenTVDriver",
+    "scripts": {
+      "pair-remote": "./lib/rc-pair.js"
+    }
+  },
+  "peerDependencies": {
+    "appium": "^3.0.0"
+  }
+}
