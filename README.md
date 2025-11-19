@@ -28,7 +28,7 @@ package in your `package.json`)
 To install directly from the GitHub repository:
 
 ```bash
-appium driver install --source=github --package=Biloleg/appium-tizen-driver tizentv
+appium driver install --source=npm appium-tizen-tv-driver@github:Biloleg/appium-tizen-driver
 ```
 
 Or using npm directly in your project:
